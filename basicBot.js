@@ -37,20 +37,24 @@
     var rouletteIntMin = 50000;
     var rouletteIntMax = 200000;
 
-    function randomIntBetween(min, max) { // min and max included 
+    // Picks a random integer for the roulette
+    function randomIntBetween(min, max) { 
         randint = Math.floor(Math.random() * (max - min + 1) + min);
         API.sendChat(randint);
         return randint
         
     }
 
-    var autoRouletteInterval = setInterval
-    setInterval(function () {
-        if(autoRoulette === true) {
-            API.sendChat("!roulette");
-            API.sendChat("Yeehawww");
-        }
-    }, randomIntBetween(rouletteIntMin, rouletteIntMax));
+    function intervalSet(min, max) {
+        setInterval(function () {
+            if(autoRoulette === true) {
+                API.sendChat("!roulette");
+                API.sendChat("Yeehawww");
+            }
+        }, randomIntBetween(rouletteIntMin, rouletteIntMax));
+    }
+    intervalSet(rouletteIntMin, rouletteIntMax);
+    
 
     // This socket server is used solely for statistical and troubleshooting purposes.
     // This server may not always be up, but will be used to get live data at any given time.
@@ -422,6 +426,8 @@
                     setTimeout(function(winner, pos) {
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
+
+                    intervalSet(rouletteIntMin, rouletteIntMax);
                 }
             },
             usersUsedThor: []
