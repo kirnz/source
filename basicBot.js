@@ -68,15 +68,22 @@
     function intermittentRoulette() {
         API.sendChat('IntermittentRoulette function has been called');
         var min = 120000,
-            max = 300000;
+          max = 300000;
         var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
-        API.sendChat('Random int is: ' + rand);
+        API.sendChat('Wait for ' + rand + ' seconds');
         API.sendChat("!roulette");
 
+        API.sendChat('Setting interval to ' + rand + ' seconds');
         setInterval(intermittentRoulette(), rand);
-        API.sendChat('The interval was set to ' + rand);
-        API.sendChat('Calling intermittentRoulette function'); 
-        intermittentRoulette()
+        
+      }
+
+      function myFunction() {
+        var min = 5,
+          max = 10;
+        var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number between 5 - 10
+        console.log
+        setTimeout(myFunction, rand * 1000);
       }
      
     
