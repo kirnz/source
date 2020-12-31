@@ -50,21 +50,36 @@
         //}
     //}
 
-    function intermittentRoulette() {
+    //function intermittentRoulette() {
+        //console.log('IntermittentRoulette function has been called');
+        //var min = 120000,
+            //max = 300000;
+        //var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
+        //console.log('Roulette waiting for ' + rand + ' seconds');
+        //setTimeout(function () {
+            //if(autoRoulette_on === true) {
+                    //API.sendChat("!roulette");
+                    //API.sendChat("Yeehawww");
+                //}
+            //}, rand);
+      //}
+
+
+      function intermittentRoulette() {
+        console.log('IntermittentRoulette function has been called');
         var min = 120000,
             max = 300000;
         var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
         console.log('Roulette waiting for ' + rand + ' seconds');
-        setTimeout(function () {
-            if(autoRoulette_on === true) {
-                    API.sendChat("!roulette");
-                    API.sendChat("Yeehawww");
-                }
-            }, rand * 1000);
+        if(autoRoulette_on === true) {
+            API.sendChat("!roulette");
+            API.sendChat("Yeehawww");
+        }  
+        setTimeout(intermittentRoulette(), rand);
       }
       
-    intermittentRoulette()
-    console.log('IntermittentRoulette function has been called (initial)');
+    intermittentRoulette();
+    
 
     //function intervalSet(min, max) {
         //setInterval(function () {
