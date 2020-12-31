@@ -406,7 +406,7 @@
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat("The Limitless Roulette is OPEN! Type !join to get in on the fun");
+                    API.sendChat("Jeepers creepers! The Limitless Roulette is OPEN! Type !join to join in");
                 },
 
                 //basicBot.chat.isopen
