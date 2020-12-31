@@ -44,13 +44,27 @@
         
     }
 
-    function autoRoulette() {
-        if(autoRoulette_on === true) {
-            API.sendChat("!roulette");
-        }
-    }
+    //function autoRoulette() {
+        //if(autoRoulette_on === true) {
+            //API.sendChat("!roulette");
+        //}
+    //}
 
-    
+    function intermittentRoulette() {
+        var min = 120000,
+            max = 300000;
+        var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
+        console.log('Roulette waiting for ' + rand + ' seconds');
+        setTimeout(function () {
+            if(autoRoulette_on === true) {
+                    API.sendChat("!roulette");
+                    API.sendChat("Yeehawww");
+                }
+            }, rand * 1000);
+      }
+      
+    intermittentRoulette()
+    console.log('IntermittentRoulette function has been called (initial)');
 
     //function intervalSet(min, max) {
         //setInterval(function () {
@@ -434,14 +448,6 @@
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
 
-                    //intervalSet(rouletteIntMin, rouletteIntMax);
-                    setInterval(autoRoulette(), function() {
-                        var roulette_min = 120000;
-                        var roulette_max = 300000;
-                        randint = Math.floor(Math.random() * (roulette_max - roulette_min + 1) + roulette_min);
-                        API.sendChat(randint);
-                        return randint
-                    })
                 }
                 
             },
