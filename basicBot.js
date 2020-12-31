@@ -396,14 +396,13 @@
                 participants: [],
                 countdown: null,
                 startRoulette: function() {
-
-                    var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
-                    var intro_message = basicBot.chat.roulettephrases[randmsg];
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat(intro_message + " The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
+
+                    var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
+                    API.sendChat(basicBot.chat.roulettephrases[randmsg] + " The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
                 },
 
                 //basicBot.chat.isopen
