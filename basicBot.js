@@ -249,9 +249,9 @@
         status: false,
         name: 'basicBot Mozzle Edition',
         loggedInID: null,
-        scriptLink: 'https://raw.githubusercontent.com/kirnz/source/master/basicBot.js',
+        scriptLink: 'https://kirnz.github.io/source/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
-        chatLink: 'https://raw.githack.com/kirnz/source/master/lang/en.json',
+        chatLink: 'https://kirnz.github.io/source/lang/en.json',
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -259,8 +259,8 @@
         settings: {
             botName: 'basicBot Mozzle Edition',
             language: 'english',
-            chatLink: 'https://raw.githack.com/kirnz/source/master/lang/en.json',
-            scriptLink: 'https://raw.githack.com/kirnz/source/master/basicBot.js',
+            chatLink: 'https://kirnz.github.io/source/lang/en.json',
+            scriptLink: 'https://kirnz.github.io/source/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -375,9 +375,9 @@
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
             roulette: {
-                rouletteStatus: false,
+                rouletteStatus: true,
                 participants: [],
-                countdown: null,
+                countdown: 30,
                 startRoulette: function() {
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function() {
