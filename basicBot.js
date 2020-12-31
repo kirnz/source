@@ -37,12 +37,12 @@
     
 
     // Picks a random integer for the roulette
-    function randomIntBetween(min, max) { 
-        randint = Math.floor(Math.random() * (max - min + 1) + min);
-        API.sendChat(randint);
-        return randint
+    //function randomIntBetween(min, max) { 
+        //randint = Math.floor(Math.random() * (max - min + 1) + min);
+        //API.sendChat(randint);
+        //return randint
         
-    }
+    //}
 
     //function autoRoulette() {
         //if(autoRoulette_on === true) {
@@ -65,18 +65,30 @@
       //}
 
 
-    function intermittentRoulette() {
-        API.sendChat('IntermittentRoulette function has been called');
-        var min = 120000,
-          max = 300000;
-        var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
-        API.sendChat('Wait for ' + rand + ' seconds');
-        API.sendChat("!roulette");
+    //function intermittentRoulette() {
+        //API.sendChat('IntermittentRoulette function has been called');
+        //var min = 120000,
+          //max = 300000;
+        //var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
+        //API.sendChat('Wait for ' + rand + ' seconds');
+        //API.sendChat("!roulette");
 
-        API.sendChat('Setting interval to ' + rand + ' seconds');
-        setTimeout(intermittentRoulette(), rand * 1000);
+        //API.sendChat('Setting interval to ' + rand + ' seconds');
+        //setTimeout(intermittentRoulette, rand * 1000);
         
-      }
+      //}
+
+    function intermittentRoulette() {
+        API.sendChat("!roulette");
+    }
+
+    (function loop() {
+        var rand = Math.round(Math.random() * (300000 - 120000)) + 120000;
+        setTimeout(function() {
+                intermittentRoulette();
+                loop();  
+        }, rand);
+    }());
     
     
 
