@@ -382,9 +382,9 @@
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
             roulette: {
-                rouletteStatus: true,
+                rouletteStatus: false,
                 participants: [],
-                countdown: 1,
+                countdown: null,
                 startRoulette: function() {
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function() {
