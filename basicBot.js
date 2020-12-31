@@ -414,7 +414,7 @@
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
 
-                    if(name === "undefined" || name === "@undefined") {
+                    if(basicBot.room.roulette.participants.length === 0) {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
                         return
                     }
