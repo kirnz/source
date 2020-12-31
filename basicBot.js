@@ -396,11 +396,14 @@
                 participants: [],
                 countdown: null,
                 startRoulette: function() {
+
+                    var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
+                    var intro_message = basicBot.chat.roulettephrases[randmsg];
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat("Crikey! The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
+                    API.sendChat(intro_message + " The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
                 },
 
                 //basicBot.chat.isopen
@@ -409,10 +412,13 @@
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
+                    API.sendChat("[Debug] Winner variable is " + winner)
                     var pos = 1;
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
+                    API.sendChat("[Debug] User variable is " + user)
                     var name = user.username;
+                    API.sendChat("[Debug] Name variable is " + name)
 
                     if(basicBot.room.roulette.participants.length === 0) {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
