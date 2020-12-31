@@ -38,7 +38,6 @@
     var rouletteIntMax = 200000;
 
     function randomIntBetween(min, max) { // min and max included 
-        API.sendChat();
         randint = Math.floor(Math.random() * (max - min + 1) + min);
         API.sendChat(randint);
         return randint
