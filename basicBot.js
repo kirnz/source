@@ -247,9 +247,9 @@
     var basicBot = {
         version: '2.12.3',
         status: false,
-        name: 'basicBot',
+        name: 'basicBot Mozzle Edition',
         loggedInID: null,
-        scriptLink: 'https://raw.githack.com/basicBot/source/master/basicBot.js',
+        scriptLink: 'https://raw.githubusercontent.com/kirnz/source/master/basicBot.js',
         cmdLink: 'http://git.io/245Ppg',
         chatLink: 'https://raw.githack.com/basicBot/source/master/lang/en.json',
         chat: null,
@@ -257,10 +257,10 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: 'basicBot',
+            botName: 'basicBot Mozzle Edition',
             language: 'english',
             chatLink: 'https://raw.githack.com/basicBot/source/master/lang/en.json',
-            scriptLink: 'https://raw.githack.com/basicBot/source/master/basicBot.js',
+            scriptLink: 'https://raw.githubusercontent.com/kirnz/source/master/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -383,8 +383,10 @@
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat(basicBot.chat.isopen);
+                    API.sendChat("The roulette is open testing testing");
                 },
+
+                //basicBot.chat.isopen
                 endRoulette: function() {
                     basicBot.room.roulette.rouletteStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
