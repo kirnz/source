@@ -33,74 +33,21 @@
         basicBot.status = false;
     };
 
+    // Roulette Shenanagins
     var autoRoulette_on = true;
-    
 
-    // Picks a random integer for the roulette
-    //function randomIntBetween(min, max) { 
-        //randint = Math.floor(Math.random() * (max - min + 1) + min);
-        //API.sendChat(randint);
-        //return randint
-        
-    //}
-
-    //function autoRoulette() {
-        //if(autoRoulette_on === true) {
-            //API.sendChat("!roulette");
-        //}
-    //}
-
-    //function intermittentRoulette() {
-        //console.log('IntermittentRoulette function has been called');
-        //var min = 120000,
-            //max = 300000;
-        //var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
-        //console.log('Roulette waiting for ' + rand + ' seconds');
-        //setTimeout(function () {
-            //if(autoRoulette_on === true) {
-                    //API.sendChat("!roulette");
-                    //API.sendChat("Yeehawww");
-                //}
-            //}, rand);
-      //}
-
-
-    //function intermittentRoulette() {
-        //API.sendChat('IntermittentRoulette function has been called');
-        //var min = 120000,
-          //max = 300000;
-        //var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number
-        //API.sendChat('Wait for ' + rand + ' seconds');
-        //API.sendChat("!roulette");
-
-        //API.sendChat('Setting interval to ' + rand + ' seconds');
-        //setTimeout(intermittentRoulette, rand * 1000);
-        
-      //}
 
     function intermittentRoulette() {
         API.sendChat("!roulette");
     }
 
     (function loop() {
-        var rand = Math.round(Math.random() * (300000 - 120000)) + 120000;
+        var rand = Math.round(Math.random() * (900000 - 120000)) + 120000;
         setTimeout(function() {
                 intermittentRoulette();
                 loop();  
         }, rand);
     }());
-    
-    
-
-    //function intervalSet(min, max) {
-        //setInterval(function () {
-            //if(autoRoulette_on === true) {
-                //API.sendChat("!roulette");
-                //API.sendChat("Yeehawww");
-            //}
-       // }, randomIntBetween(rouletteIntMin, rouletteIntMax));
-   // }
-   // intervalSet(rouletteIntMin, rouletteIntMax);
     
 
     // This socket server is used solely for statistical and troubleshooting purposes.
@@ -339,7 +286,7 @@
             autowoot: true,
             autoskip: false,
             smartSkip: true,
-            cmdDeletion: true,
+            cmdDeletion: false,
             maximumAfk: 120,
             afkRemoval: true,
             maximumDc: 60,
@@ -355,7 +302,7 @@
             historySkip: false,
             timeGuard: true,
             strictTimeGuard: true,
-            maximumSongLength: 10,
+            maximumSongLength: 11,
             autodisable: false,
             commandCooldown: 30,
             usercommandsEnabled: true,
