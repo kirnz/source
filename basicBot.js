@@ -77,15 +77,6 @@
         setInterval(intermittentRoulette(), rand);
         
       }
-
-      function myFunction() {
-        var min = 5,
-          max = 10;
-        var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number between 5 - 10
-        console.log
-        setTimeout(myFunction, rand * 1000);
-      }
-     
     
     
 
