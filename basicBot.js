@@ -377,7 +377,7 @@
             roulette: {
                 rouletteStatus: true,
                 participants: [],
-                countdown: 30,
+                countdown: 1,
                 startRoulette: function() {
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function() {
