@@ -418,14 +418,17 @@
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
                         return
                     }
-                    API.sendChat(subChat(basicBot.chat.winnerpicked, {
-                        name: name,
-                        position: pos
-                    }));
-                    setTimeout(function(winner, pos) {
-                        basicBot.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
 
+                    else {
+                        API.sendChat(subChat(basicBot.chat.winnerpicked, {
+                            name: name,
+                            position: pos
+                        }));
+                        setTimeout(function(winner, pos) {
+                            basicBot.userUtilities.moveUser(winner, pos, false);
+                        }, 1 * 1000, winner, pos);
+                    }
+                    
                 }
                 
             },
