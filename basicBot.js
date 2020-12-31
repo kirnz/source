@@ -74,7 +74,7 @@
         API.sendChat("!roulette");
 
         API.sendChat('Setting interval to ' + rand + ' seconds');
-        setInterval(intermittentRoulette(), rand);
+        setTimeout(intermittentRoulette(), rand);
         
       }
     
