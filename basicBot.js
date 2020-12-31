@@ -75,9 +75,11 @@
 
         setInterval(intermittentRoulette(), rand);
         API.sendChat('The interval was set to ' + rand);
+        API.sendChat('Calling intermittentRoulette function'); 
+        intermittentRoulette()
       }
-    API.sendChat('Calling intermittentRoulette function');  
-    intermittentRoulette();
+     
+    
     
 
     //function intervalSet(min, max) {
