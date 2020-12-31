@@ -33,6 +33,13 @@
         basicBot.status = false;
     };
 
+    var autoRoulette = true;
+    setInterval(function () {
+        if(autoRoulette === true) {
+            API.sendChat("!roulette");
+        }
+    }, 1000 * 60);
+
     // This socket server is used solely for statistical and troubleshooting purposes.
     // This server may not always be up, but will be used to get live data at any given time.
 
