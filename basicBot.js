@@ -77,7 +77,7 @@
         API.sendChat("!roulette");
         API.sendChat("Yeehawww");
 
-        setTimeout(intermittentRoulette(), rand);
+        setInterval(intermittentRoulette(), rand);
       }
       
     intermittentRoulette();
