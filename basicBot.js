@@ -1669,6 +1669,8 @@
                 }
             },
 
+            
+
             addCommand: {
                 command: 'add',
                 rank: 'mod',
@@ -2149,6 +2151,8 @@
                     }
                 }
             },
+
+            
 
             cookieCommand: {
                 command: 'cookie',
@@ -2648,6 +2652,19 @@
                         API.sendChat(subChat(basicBot.chat.starterhelp, {
                             link: link
                         }));
+                    }
+                }
+            },
+
+            autoRouletteCommand: {
+                command: 'autoroulette',
+                rank: 'manager',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        intermittentRoulette();
                     }
                 }
             },
