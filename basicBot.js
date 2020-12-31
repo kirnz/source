@@ -34,11 +34,24 @@
     };
 
     var autoRoulette = true;
+    var rouletteIntMin = 50000;
+    var rouletteIntMax = 200000;
+
+    function randomIntBetween(min, max) { // min and max included 
+        API.sendChat();
+        randint = Math.floor(Math.random() * (max - min + 1) + min);
+        API.sendChat(randint);
+        return randint
+        
+    }
+
+    var autoRouletteInterval = setInterval
     setInterval(function () {
         if(autoRoulette === true) {
             API.sendChat("!roulette");
+            API.sendChat("Yeehawww");
         }
-    }, 180000);
+    }, randomIntBetween(rouletteIntMin, rouletteIntMax));
 
     // This socket server is used solely for statistical and troubleshooting purposes.
     // This server may not always be up, but will be used to get live data at any given time.
@@ -390,7 +403,7 @@
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat("The roulette is open testing testing");
+                    API.sendChat("The Limitless Roulette is OPEN! Type !join to get in on the fun");
                 },
 
                 //basicBot.chat.isopen
