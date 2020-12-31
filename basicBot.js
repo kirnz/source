@@ -33,9 +33,8 @@
         basicBot.status = false;
     };
 
-    var autoRoulette = true;
-    var rouletteIntMin = 200000;
-    var rouletteIntMax = 600000;
+    var autoRoulette_on = true;
+    
 
     // Picks a random integer for the roulette
     function randomIntBetween(min, max) { 
@@ -45,15 +44,23 @@
         
     }
 
-    function intervalSet(min, max) {
-        setInterval(function () {
-            if(autoRoulette === true) {
-                API.sendChat("!roulette");
-                API.sendChat("Yeehawww");
-            }
-        }, randomIntBetween(rouletteIntMin, rouletteIntMax));
+    function autoRoulette() {
+        if(autoRoulette_on === true) {
+            API.sendChat("!roulette");
+        }
     }
-    intervalSet(rouletteIntMin, rouletteIntMax);
+
+    
+
+    //function intervalSet(min, max) {
+        //setInterval(function () {
+            //if(autoRoulette_on === true) {
+                //API.sendChat("!roulette");
+                //API.sendChat("Yeehawww");
+            //}
+       // }, randomIntBetween(rouletteIntMin, rouletteIntMax));
+   // }
+   // intervalSet(rouletteIntMin, rouletteIntMax);
     
 
     // This socket server is used solely for statistical and troubleshooting purposes.
@@ -427,8 +434,16 @@
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
 
-                    intervalSet(rouletteIntMin, rouletteIntMax);
+                    //intervalSet(rouletteIntMin, rouletteIntMax);
+                    setInterval(autoRoulette(), function() {
+                        var roulette_min = 120000;
+                        var roulette_max = 300000;
+                        randint = Math.floor(Math.random() * (roulette_max - roulette_min + 1) + roulette_min);
+                        API.sendChat(randint);
+                        return randint
+                    })
                 }
+                
             },
             usersUsedThor: []
         },
