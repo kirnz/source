@@ -411,16 +411,16 @@
                     var ind = Math.floor(Math.random() * basicBot.room.roulette.participants.length);
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
-                    API.sendChat("[Debug] Winner variable is " + winner)
+                    API.sendChat("[Debug] Winner variable is " + winner);
                     var pos = 1;
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
-                    API.sendChat("[Debug] User variable is " + user)
+                    API.sendChat("[Debug] User variable is " + user);
                     var name = user.username;
-                    API.sendChat("[Debug] Name variable is " + name)
+                    API.sendChat("[Debug] Name variable is " + name);
 
                     if(user === "undefined") {
-                        API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
+                        API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                         return
                     }
 
