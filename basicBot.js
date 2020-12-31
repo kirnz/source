@@ -34,8 +34,8 @@
     };
 
     var autoRoulette = true;
-    var rouletteIntMin = 50000;
-    var rouletteIntMax = 200000;
+    var rouletteIntMin = 200000;
+    var rouletteIntMax = 600000;
 
     // Picks a random integer for the roulette
     function randomIntBetween(min, max) { 
