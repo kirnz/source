@@ -419,7 +419,7 @@
                     var name = user.username;
                     API.sendChat("[Debug] Name variable is " + name)
 
-                    if(basicBot.room.roulette.participants.length === 0) {
+                    if(basicBot.userUtilities.lookupUser(winner) === "undefined") {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
                         return
                     }
