@@ -334,7 +334,7 @@
             website: null,
             intervalMessages: [],
             messageInterval: 5,
-            songstats: true,
+            songstats: false,
             commandLiteral: '!',
             blacklists: {
                 NSFW: 'https://raw.githack.com/basicBot/custom/master/blacklists/NSFWlist.json',
@@ -400,7 +400,7 @@
                     basicBot.room.roulette.countdown = setTimeout(function() {
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
-                    API.sendChat("Jeepers creepers! The Limitless Roulette is OPEN! Type !join to join in");
+                    API.sendChat("Crikey! The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
                 },
 
                 //basicBot.chat.isopen
@@ -413,6 +413,11 @@
                     //var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
+
+                    if(name === "undefined" || name === "@undefined") {
+                        API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.")
+                        return
+                    }
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {
                         name: name,
                         position: pos
