@@ -42,7 +42,7 @@
     }
 
     (function loop() {
-        var rand = Math.round(Math.random() * (900000 - 120000)) + 120000;
+        var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
         setTimeout(function() {
                 intermittentRoulette();
                 loop();  
@@ -403,7 +403,7 @@
 
                     var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
                     var start_msg = basicBot.chat.roulettephrases[randmsg];
-                    API.sendChat(start_msg + " The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate (and !leave if you regret it). The winner will be moved to position 1 in the queue!");
+                    API.sendChat(start_msg + " @everyone The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate (and !leave if you regret it). The winner will be moved to position 1 in the queue!");
                 },
 
                 //basicBot.chat.isopen
@@ -2631,7 +2631,7 @@
                 }
             },
 
-            pugCommand: {
+            pugCommand: { 
                 command: 'banana',
                 rank: 'user',
                 type: 'exact',
@@ -2645,18 +2645,18 @@
                 }
             },
 
-            autoRouletteCommand: {
-                command: 'autoroulette',
-                rank: 'manager',
-                type: 'exact',
-                functionality: function(chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
-                    else {
-                        intermittentRoulette();
-                    }
-                }
-            },
+            //autoRouletteCommand: {
+                //command: 'autoroulette',
+                //rank: 'manager',
+                //type: 'exact',
+                //functionality: function(chat, cmd) {
+                    //if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    //if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    //else {
+                        //intermittentRoulette();
+                    //}
+                //}
+            //},
 
             historyskipCommand: {
                 command: 'historyskip',
