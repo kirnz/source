@@ -421,7 +421,7 @@
                     var name = user.username;
                     //API.sendChat("[Debug] Name variable is " + name);
 
-                    if(name == 'undefined') {
+                    if(basicBot.room.roulette.name == 'undefined') {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                         return
                     }
@@ -435,7 +435,6 @@
                             basicBot.userUtilities.moveUser(winner, pos, false);
                         }, 1 * 1000, winner, pos);
                     }
-                    
                 }
                 
             },
