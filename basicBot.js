@@ -129,7 +129,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get('https://raw.githack.com/basicBot/source/master/lang/langIndex.json', function(json) {
+        $.get('https://kirnz.github.io/source/lang/langIndex.json', function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
@@ -429,11 +429,11 @@
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                     } else {
                         //API.chatLog("else condition met")
-                        //API.sendChat(subChat(basicBot.chat.winnerpicked, {
-                            //name: name,
-                            //position: pos
-                        //}));
-                        API.sendChat("/me :tada: Congratulations @%%NAME%%, you won the roulette! Sending @%%NAME%% to position %%POSITION%%...");
+                        API.sendChat(subChat(basicBot.chat.winnerpicked, {
+                            name: name,
+                            position: pos
+                        }));
+                        //API.sendChat("/me :tada: Congratulations @%%NAME%% on winning the roulette! Sending @%%NAME%% to position %%POSITION%%...");
                         setTimeout(function(winner, pos) {
                             basicBot.userUtilities.moveUser(winner, pos, false);
                         }, 1 * 1000, winner, pos);
