@@ -421,7 +421,7 @@
                     var name = user.username;
                     //API.sendChat("[Debug] Name variable is " + name);
 
-                    if(ind === 0) {
+                    if(participants === 0) {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                         return
                     }
