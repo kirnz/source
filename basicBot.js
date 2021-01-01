@@ -401,8 +401,9 @@
                         basicBot.room.roulette.endRoulette();
                     }, 60 * 1000);
 
-                    //var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
-                    API.sendChat("The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
+                    var randmsg = Math.floor(Math.random() * basicBot.chat.roulettephrases.length);
+                    var start_msg = basicBot.chat.roulettephrases[randmsg];
+                    API.sendChat(start_msg + "The :musical_note:Limitless :diamonds:Roulette:spades: has started! Type !join to participate. The winner will be moved to position 1 in the queue!");
                 },
 
                 //basicBot.chat.isopen
