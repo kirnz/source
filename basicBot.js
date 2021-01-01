@@ -427,7 +427,7 @@
 
                     if(name == null || name == 'undefined') {
                         //API.chatLog("if condition met")
-                        API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
+                        API.sendChat("Uh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                     } else {
                         //API.chatLog("else condition met")
                         API.sendChat(subChat(basicBot.chat.winnerpicked, {
