@@ -412,6 +412,7 @@
                     //API.sendChat("[Debug] Participants length var is: " + ind);
                     var winner = basicBot.room.roulette.participants[ind];
                     basicBot.room.roulette.participants = [];
+                    var testparticipants = basicBot.room.roulette.participants.length;
                     //API.sendChat("[Debug] Participants array is: " + basicBot.room.roulette.participants);
                     //API.sendChat("[Debug] Winner variable is " + winner);
                     var pos = 1;
@@ -421,12 +422,10 @@
                     var name = user.username;
                     //API.sendChat("[Debug] Name variable is " + name);
 
-                    if(basicBot.room.roulette.name == 'undefined') {
+                    if(testparticipants == 0) {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                         return
-                    }
-
-                    else {
+                    } else {
                         API.sendChat(subChat(basicBot.chat.winnerpicked, {
                             name: name,
                             position: pos
