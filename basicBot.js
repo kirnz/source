@@ -281,7 +281,7 @@
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupEmoji: true, // true or false
             googleApiKey: '', // Specify the Google API key that will be used by the bot to fetch data from YouTube. Please visit https://developers.google.com/youtube/v3/getting-started#before-you-start for guidance.
             autowoot: true,
             autoskip: false,
@@ -421,7 +421,7 @@
                     var name = user.username;
                     //API.sendChat("[Debug] Name variable is " + name);
 
-                    if(participants === 0) {
+                    if(name == 'undefined') {
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                         return
                     }
