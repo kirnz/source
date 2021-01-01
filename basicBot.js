@@ -429,10 +429,11 @@
                         API.sendChat("Ugh oh, nobody joined the :musical_note:Limitless :diamonds:Roulette:spades:. A winner could not be chosen.");
                     } else {
                         //API.chatLog("else condition met")
-                        API.sendChat(subChat(basicBot.chat.winnerpicked, {
-                            name: name,
-                            position: pos
-                        }));
+                        //API.sendChat(subChat(basicBot.chat.winnerpicked, {
+                            //name: name,
+                            //position: pos
+                        //}));
+                        API.sendChat("/me :tada: Congratulations @%%NAME%%, you won the roulette! Sending @%%NAME%% to position %%POSITION%%...");
                         setTimeout(function(winner, pos) {
                             basicBot.userUtilities.moveUser(winner, pos, false);
                         }, 1 * 1000, winner, pos);
@@ -1309,7 +1310,7 @@
 
                 if ((msg.indexOf(joinedroulette) > -1 || msg.indexOf(leftroulette) > -1) && chat.uid === basicBot.loggedInID) {
                     setTimeout(function(id) {
-                        API.moderateDeleteChat(id);
+                        //API.moderateDeleteChat(id); disabled by mozzle
                     }, 5 * 1000, chat.cid);
                     return true;
                 }
