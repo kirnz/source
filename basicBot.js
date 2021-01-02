@@ -41,10 +41,22 @@
         API.sendChat("!roulette");
     }
 
+
     (function loop() {
-        var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
+        var rand = Math.round(Math.random() * (600000 - 120000)) + 120000;
+        // var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
         setTimeout(function() {
-                intermittentRoulette();
+
+                var rouletteWlMin = 5;
+                var currentWl = API.getWaitList();
+                var wlLen = currentWl.length;
+                var djsNeeded = (rouletteWlMin - wlLen);
+                if(wlLen < rouletteWlMin) {
+                    API.sendChat("Uh oh, there were too few people in the waitlist to run the roulette this round. The minimum is set to " + rouletteWlMin + " DJs. " + djsNeeded + " more DJs need to get in on the action for roulettes to begin!");
+                } else {
+                    intermittentRoulette();
+                }
+                
                 loop();  
         }, rand);
     }());
