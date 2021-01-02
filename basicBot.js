@@ -54,7 +54,7 @@
                 //API.sendChat("Debug - WL length is " + wlLen + ". CurrentWL is " + currentWl + ". DJs needed is " + djsNeeded);
                 if(wlLen < rouletteWlMin) {
                     //API.sendChat("Uh oh, there were too few people in the waitlist to run the roulette this round. The minimum is set to " + rouletteWlMin + " DJs. " + djsNeeded + " more DJs need to get in on the action for roulettes to begin!");
-                    API.sendChat(djsNeeded + "more DJs needed for roulettes to start.");
+                    API.sendChat(djsNeeded + " more DJs needed for roulettes to start.");
                 } else {
                     intermittentRoulette();
                 }
