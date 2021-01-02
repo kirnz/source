@@ -1283,11 +1283,11 @@
                     }
                 }
                 if (basicBot.chatcleaner(chat)) {
-                    API.moderateDeleteChat(chat.cid);
+                    //API.moderateDeleteChat(chat.cid); Deleted by moz
                     return true;
                 }
                 if (basicBot.settings.cmdDeletion && msg.startsWith(basicBot.settings.commandLiteral)) {
-                    API.moderateDeleteChat(chat.cid);
+                    //API.moderateDeleteChat(chat.cid); Deleted by moz
                 }
                 /**
                  var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
@@ -1300,7 +1300,7 @@
                 }
                  **/
                 if (msg.indexOf('http://adf.ly/') > -1) {
-                    API.moderateDeleteChat(chat.cid);
+                    //API.moderateDeleteChat(chat.cid); deleted by moz
                     API.sendChat(subChat(basicBot.chat.adfly, {
                         name: chat.un
                     }));
@@ -1348,7 +1348,7 @@
                     if (userPerm < API.ROLE.BOUNCER) {
                         var u = basicBot.userUtilities.lookupUser(chat.uid);
                         if (u.lastEta !== null && (Date.now() - u.lastEta) < 1 * 60 * 60 * 1000) {
-                            API.moderateDeleteChat(chat.cid);
+                            //API.moderateDeleteChat(chat.cid); deleted by moz
                             return void(0);
                         } else u.lastEta = Date.now();
                     }
@@ -1460,12 +1460,12 @@
             if (basicBot.userUtilities.getPermission(u) < API.ROLE.BOUNCER) return API.chatLog(basicBot.chat.greyuser);
             if (basicBot.userUtilities.getPermission(u) === API.ROLE.BOUNCER) API.chatLog(basicBot.chat.bouncer);
             basicBot.connectAPI();
-            API.moderateDeleteChat = function(cid) {
-                $.ajax({
-                    url: '/_/chat/' + cid,
-                    type: 'DELETE'
-                })
-            };
+            //API.moderateDeleteChat = function(cid) {
+                //$.ajax({
+                    //url: '/_/chat/' + cid,
+                    //type: 'DELETE'
+                //})
+            //}; deleted by moz
 
             basicBot.room.name = window.location.pathname;
             var Check;
@@ -2340,7 +2340,7 @@
                         }));
                         for (var i = 1; i < basicBot.room.chatMessages.length; i++) {
                             if (basicBot.room.chatMessages[i].indexOf(user.id) > -1) {
-                                API.moderateDeleteChat(basicBot.room.chatMessages[i][0]);
+                                //API.moderateDeleteChat(basicBot.room.chatMessages[i][0]); Deleted by moz
                                 basicBot.room.chatMessages[i].splice(0);
                             }
                         }
