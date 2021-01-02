@@ -43,14 +43,15 @@
 
 
     (function loop() {
-        var rand = Math.round(Math.random() * (600000 - 120000)) + 120000;
-        // var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
+        //var rand = Math.round(Math.random() * (600000 - 120000)) + 120000;
+        var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
         setTimeout(function() {
-
-                var rouletteWlMin = 5;
+                // Checks to make sure there are enough people to run the roulette
+                var rouletteWlMin = 4;
                 var currentWl = API.getWaitList();
                 var wlLen = currentWl.length;
                 var djsNeeded = (rouletteWlMin - wlLen);
+                //API.sendChat("Debug - WL length is " + wlLen + ". CurrentWL is " + currentWl + ". DJs needed is " + djsNeeded);
                 if(wlLen < rouletteWlMin) {
                     API.sendChat("Uh oh, there were too few people in the waitlist to run the roulette this round. The minimum is set to " + rouletteWlMin + " DJs. " + djsNeeded + " more DJs need to get in on the action for roulettes to begin!");
                 } else {
