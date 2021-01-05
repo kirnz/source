@@ -44,7 +44,8 @@
 
     (function loop() {
         //var rand = Math.round(Math.random() * (600000 - 120000)) + 120000;
-        var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000;
+        //var rand = Math.round(Math.random() * (3600000 - 600000)) + 600000; 10 minutes > 60 minutes
+        var rand = Math.round(Math.random() * (5400000 - 1800000)) + 1800000;
         setTimeout(function() {
                 // Checks to make sure there are enough people to run the roulette
                 var rouletteWlMin = 4;
