@@ -164,7 +164,7 @@
     "kick": "\/me [@%%NAME%%], @%%USERNAME%% you are being kicked from the community for %%TIME%% minutes.",
     "kill": "\/me Shutting down.",
     "logout": "\/me [@%%NAME%%] Logging out %%BOTNAME%%",
-    "rouletteleave": "\/me @%%NAME%% chickened out. :chicken:",
+    "rouletteleave": "\/me @%%NAME%% Has left the roulette.",
     "songlink": "\/me [@%%NAME%%] Link to current song: %%LINK%%",
     "usedlockskip": "\/me [%%NAME%% used lockskip]",
     "usedskip": "\/me [%%NAME%% used skip]",
