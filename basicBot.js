@@ -2707,10 +2707,22 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
                         if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
-                            basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat(basicBot.chat.roulettejoin, {
-                                name: chat.un
-                            }));
+
+                            // Test if the user is already djing
+
+                            var dj = API.getDJ().id;
+
+                            if (!(dj == chat.uid)) {
+                                // If the entrant is not the DJ:
+                                basicBot.room.roulette.participants.push(chat.uid);
+                                API.sendChat(subChat(basicBot.chat.roulettejoin, {
+                                    name: chat.un
+                                }));
+
+                            } else {
+                                // If the entrant is the DJ:
+                                API.sendChat(chat.un + ", you are unable to join the roulette as you are currently the DJ.")
+                            }
                         }
                     }
                 }
